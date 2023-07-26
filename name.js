@@ -1,9 +1,24 @@
 //Update data model so we can access hex codes in squares and captions
 
+//DATA MODEL
 
+var hexArray = [];
+var box1 = document.querySelector("#box1");
+var paletteButton = document.querySelector(".palette-button");
+var cap1 = document.querySelector("#cap1");
+
+
+//EVENT LISTENERS
+
+paletteButton.addEventListener("click", function(event){
+    randomPalette();
+    createNewPalette();
+}
+)
+
+//FUNCTIONS
 
 var hexCharacters = ["a", "b", "c", "d", "e", "f", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-var hexArray = [];
 
 function randomHex(hexCharacters){
 var hexArray = [];
@@ -29,3 +44,8 @@ function randomPalette(){
 
 
 console.log(randomPalette())
+
+function createNewPalette(){
+    cap1.innerText = hexArray[0];
+    box1.style.backgroundColor = hexArray[0];
+}
