@@ -1,39 +1,68 @@
-// ITERATION 0:
+//Update data model so we can access hex codes in squares and captions
 
-// HTML to layout the structure of the page. We need a HEADER(h1), MAIN<main>.
-// Question: How do we turn a randomly generated number into a hex code?
-// Use flexbox to orgnaize Header and Main.
-// Can we use labels (like we did with radio buttons) for our color box text display.
-// 
+//DATA MODEL
 
-// ITERATION 1: 
+var hexArray = [];
 
-// Button shape is weird-- we will have to use border radius.
-// Data model for our hex codes.
-// We will need the to index our data model and set colors based on its contents.
-// Each box will represent an index position in our data model array. Box 1 is 0, Box 2 is 1.....
-// We will need have each box read its index position and set itself to the color it is reading.
+//DOM ELEMENTS
 
-// ITERATION 2:
+var box1 = document.querySelector("#box1");
+var box2 = document.querySelector("#box2");
+var box3 = document.querySelector("#box3");
+var box4 = document.querySelector("#box4");
+var box5 = document.querySelector("#box5");
+var cap1 = document.querySelector("#cap1");
+var cap2 = document.querySelector("#cap2");
+var cap3 = document.querySelector("#cap3");
+var cap4 = document.querySelector("#cap4");
+var cap5 = document.querySelector("#cap5");
+var paletteButton = document.querySelector(".palette-button");
 
-// We will need to add images to our boxes that have event listeners on click.
-// A conditional that only clears our data model if the box is unlocked.
-// If box is locked do not clear out the data model in that index position.
-// Question: Can we use a for loop + a conditional for this?
+//EVENT LISTENERS
 
-// ITERATION 3: 
+paletteButton.addEventListener("click", function(event){
+    randomPalette();
+    createNewPalette();
+}
+)
 
-// Build Saved palettes section with CSS + HTML 
-// Question: is this an HTML aside??
-// New Data Model array for saved palettes section
-// Event Listener on Save Palette button to push original Data Model contents into new one.
-// Style mini boxes
-// !!similar to savedCovers from our paired project!!
+//FUNCTIONS
 
-// ITERATION 4:
+function randomHex(){
+var hexCharacters = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var hexArray = [];
+for(var i=0; i<6; i++){
+  var randomIndex =  Math.floor(Math.random() * 16);
+  var randomCharacter = hexCharacters[randomIndex];
+  hexArray.push(randomCharacter);
+}
+  var hexCode = `#${hexArray.join("")}`;
+  return hexCode
+}
 
-// Splice our data model when we click the X.
-// Add the X next to our saved palettes.
-// Add event listener to the X.
-// Remove palette tied to the proper X.
 
+//Refactor with loop?
+function randomPalette(){
+    hexArray = [];
+    hexArray.push(randomHex());
+    hexArray.push(randomHex());
+    hexArray.push(randomHex());
+    hexArray.push(randomHex());
+    hexArray.push(randomHex());
+    return hexArray
+    }
+
+
+
+function createNewPalette(){
+    cap1.innerText = hexArray[0];
+    cap2.innerText = hexArray[1];
+    cap3.innerText = hexArray[2];
+    cap4.innerText = hexArray[3];
+    cap5.innerText = hexArray[4];
+    box1.style.backgroundColor = hexArray[1];
+    box2.style.backgroundColor = hexArray[2];
+    box3.style.backgroundColor = hexArray[3];
+    box4.style.backgroundColor = hexArray[4];
+    box5.style.backgroundColor = hexArray[5];
+}
