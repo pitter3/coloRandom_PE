@@ -23,7 +23,7 @@ html {
     height: 100%;
     width: 100%;
     padding-top: 50px;
-    padding-bottom: 300px;
+    padding-bottom: 120px;
 
 }
 
@@ -71,8 +71,25 @@ html {
     font-size: larger;
 }
 
+.button-box {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .palette-button {
     background-color: black;
     color: white;
     border-radius: 10px 100px;
+    height: 50px;
+    width: 240px;
+    font-size: x-large;
+    font-weight: 300;
+    /* margin: auto; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* -ms-transform: translateX(50%);
+    transform: translateX(50%); */
 }
