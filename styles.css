@@ -130,6 +130,6 @@ html {
     width: 25px;
 }
 
-.lock-button-0:hover {
+.lock-button:hover {
     cursor: pointer;
 }
