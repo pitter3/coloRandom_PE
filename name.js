@@ -17,7 +17,8 @@ var cap1 = document.querySelector("#cap1");
 var cap2 = document.querySelector("#cap2");
 var cap3 = document.querySelector("#cap3");
 var cap4 = document.querySelector("#cap4");
-// `var lockButton0 = document.querySelector("")`
+var unlockButton0 = document.querySelector("#unlocked0")
+var lockButton0 = document.querySelector("#locked0")
 
 //EVENT LISTENERS
 
@@ -27,7 +28,15 @@ paletteButton.addEventListener("click", function(event){
 }
 )
 
+unlockButton0.addEventListener("click", function(event) {
+  lock();
+}
+)
 
+lockButton0.addEventListener("click", function(event) {
+  unlock();
+}
+)
 
 //FUNCTIONS
 
@@ -72,3 +81,20 @@ function createNewPalette(){
     box3.style.backgroundColor = hexArray[3];
     box4.style.backgroundColor = hexArray[4];
 }
+
+function lock() {
+  unlockButton0.hidden = true;
+  lockButton0.hidden = false;
+}
+
+function unlock() {
+  lockButton0.hidden = true;
+  unlockButton0.hidden = false; 
+}
+
+// function hideImage() {
+//   meditationImage.hidden = true;
+// }
+
+// function showImage() {
+//   meditationImage.hidden = false;

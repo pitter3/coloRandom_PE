@@ -1,5 +1,5 @@
 * {
-    border: 1px solid green;
+    /* border: 1px solid green; */
     margin: 5px;
     font-family: "Poppins", sans-serif;
 }
@@ -130,8 +130,6 @@ html {
     width: 25px;
 }
 
-/* #hex-box2-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+.lock-button-0:hover {
+    cursor: pointer;
+}
