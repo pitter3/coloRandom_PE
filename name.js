@@ -2,7 +2,13 @@
 
 //DATA MODEL
 
-var hexArray = [];
+var hexObjects = [
+  {hex: "#EA9999", locked: false},
+  {hex: "#FACB9C", locked: false},
+  {hex: "#FFE59A", locked: false},
+  {hex: "#B6D7A8", locked: false},
+  {hex: "#A4C4CA", locked: false}
+]
 
 //DOM ELEMENTS
 
@@ -103,81 +109,86 @@ for(var i=0; i<6; i++){
 
 //Refactor with loop?
 function randomPalette(){
-    hexArray = [];
-  // for(var i=0; i<6; i++) {
-  // hexArray.push(randomHex());
-  // }
-    hexArray.push(randomHex());
-    hexArray.push(randomHex());
-    hexArray.push(randomHex());
-    hexArray.push(randomHex());
-    hexArray.push(randomHex());
-    // return hexArray
+  for(var i=0; i<hexObjects.length; i++){
+    if(hexObjects[i].locked === false){
+      hexObjects[i].hex = randomHex()
     }
+  }
+}
 
 
 
 function createNewPalette(){
-    cap0.innerText = hexArray[0];
-    cap1.innerText = hexArray[1];
-    cap2.innerText = hexArray[2];
-    cap3.innerText = hexArray[3];
-    cap4.innerText = hexArray[4];
-    box0.style.backgroundColor = hexArray[0];
-    box1.style.backgroundColor = hexArray[1];
-    box2.style.backgroundColor = hexArray[2];
-    box3.style.backgroundColor = hexArray[3];
-    box4.style.backgroundColor = hexArray[4];
+  cap0.innerText = hexObjects[0].hex;
+  cap1.innerText = hexObjects[1].hex;
+  cap2.innerText = hexObjects[2].hex;
+  cap3.innerText = hexObjects[3].hex;
+  cap4.innerText = hexObjects[4].hex;
+  box0.style.backgroundColor = hexObjects[0].hex;
+  box1.style.backgroundColor = hexObjects[1].hex;
+  box2.style.backgroundColor = hexObjects[2].hex;
+  box3.style.backgroundColor = hexObjects[3].hex;
+  box4.style.backgroundColor = hexObjects[4].hex;
 }
 
 function lock0() {
   unlockButton0.hidden = true;
   lockButton0.hidden = false;
+  hexObjects[0].locked = true;
 }
 
 function unlock0() {
   lockButton0.hidden = true;
   unlockButton0.hidden = false; 
+  hexObjects[0].locked = false;
 }
 
 function lock1() {
   unlockButton1.hidden = true;
   lockButton1.hidden = false;
+  hexObjects[1].locked = true;
 }
 
 function unlock1() {
   lockButton1.hidden = true;
   unlockButton1.hidden = false; 
+  hexObjects[1].locked = false;
 }
 
 function lock2() {
   unlockButton2.hidden = true;
   lockButton2.hidden = false;
+  hexObjects[2].locked = true;
 }
 
 function unlock2() {
   lockButton2.hidden = true;
   unlockButton2.hidden = false; 
+  hexObjects[2].locked = false;
 }
 
 function lock3() {
   unlockButton3.hidden = true;
   lockButton3.hidden = false;
+  hexObjects[3].locked = true;
 }
 
 function unlock3() {
   lockButton3.hidden = true;
-  unlockButton3.hidden = false; 
+  unlockButton3.hidden = false;
+  hexObjects[3].locked = false; 
 }
 
 function lock4() {
   unlockButton4.hidden = true;
   lockButton4.hidden = false;
+  hexObjects[4].locked = true;
 }
 
 function unlock4() {
   lockButton4.hidden = true;
   unlockButton4.hidden = false; 
+  hexObjects[4].locked = false;
 }
 
 // function hideImage() {
