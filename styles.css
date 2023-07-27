@@ -27,7 +27,7 @@ html {
 
 }
 
-#hexbox2 {
+#hexBoxText {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +37,7 @@ html {
     padding-bottom: 0px;
 }
 
-#box1 {
+#box0 {
     display:flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -47,7 +47,7 @@ html {
     background-color: #EA9999;
 }
 
-#box2 {
+#box1 {
     display:flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -58,7 +58,7 @@ html {
     
 }
 
-#box3 {
+#box2 {
     display:flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -68,7 +68,7 @@ html {
     background-color: #FFE59A;
 }
 
-#box4 {
+#box3 {
     display:flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -78,7 +78,7 @@ html {
     background-color: #B6D7A8;
 }
 
-#box5 {
+#box4 {
     display:flex;
     justify-content: flex-end;
     align-items: flex-end;
@@ -89,7 +89,7 @@ html {
     
 }
 
-#cap1, #cap2, #cap3, #cap4, #cap5 {
+#cap0, #cap1, #cap2, #cap3, #cap4 {
     padding-top: 0px;
     text-align: center;
     font-weight: 400;
@@ -125,7 +125,7 @@ html {
     cursor: pointer;
 }
 
-#lock1, #lock2, #lock3, #lock4, #lock5 {
+#unlocked0, #unlocked1, #unlocked2, #unlocked3, #unlocked4, #locked0, #locked1, #locked2, #locked3, #locked4 {
     height: 25px;
     width: 25px;
 }
