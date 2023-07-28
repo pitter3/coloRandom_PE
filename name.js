@@ -10,14 +10,22 @@ var hexObjects = [
   {hex: "#A4C4CA", locked: false}
 ]
 
+
 //DOM ELEMENTS
 
 var paletteButton = document.querySelector(".palette-button");
+var saveButton = document.querySelector(".save-button");
 var box0 = document.querySelector("#box0");
 var box1 = document.querySelector("#box1");
 var box2 = document.querySelector("#box2");
 var box3 = document.querySelector("#box3");
 var box4 = document.querySelector("#box4");
+var savebox10 = document.querySelector("#savebox1-0");
+var savebox11 = document.querySelector("#savebox1-1");
+var savebox12 = document.querySelector("#savebox1-2");
+var savebox13 = document.querySelector("#savebox1-3");
+var savebox14 = document.querySelector("#savebox1-4");
+var savedHexBox1 = document.querySelector("#saved-hex-box-1");
 var cap0 = document.querySelector("#cap0");
 var cap1 = document.querySelector("#cap1");
 var cap2 = document.querySelector("#cap2");
@@ -41,7 +49,10 @@ paletteButton.addEventListener("click", function(event){
     createNewPalette();
 }
 )
-
+saveButton.addEventListener("click", function(event){
+  savePalette();
+}
+)
 unlockButton0.addEventListener("click", function(event) {
   lock0();
 }
@@ -116,7 +127,15 @@ function randomPalette(){
   }
 }
 
-
+function savePalette(){
+  // if(savedHexBox1.classList.contains('hidden')){
+  // savedHexBox1.classList.remove('hidden');
+  savebox10.style.backgroundColor = hexObjects[0].hex;
+  savebox11.style.backgroundColor = hexObjects[1].hex;
+  savebox12.style.backgroundColor = hexObjects[2].hex;
+  savebox13.style.backgroundColor = hexObjects[3].hex;
+  savebox14.style.backgroundColor = hexObjects[4].hex;
+}
 
 function createNewPalette(){
   cap0.innerText = hexObjects[0].hex;
