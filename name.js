@@ -12,6 +12,13 @@ var hexObjects = [
 
 var savedPalettes = [];
 
+var savedHex0;
+var savedHex1;
+var savedHex2;
+var savedHex3;
+var savedHex4;
+var savedHex5;
+
 //DOM ELEMENTS
 
 var paletteButton = document.querySelector(".palette-button");
@@ -79,8 +86,43 @@ var unlockButton3 = document.querySelector("#unlocked3");
 var lockButton3 = document.querySelector("#locked3");
 var unlockButton4 = document.querySelector("#unlocked4");
 var lockButton4 = document.querySelector("#locked4");
+var deleteButton1 = document.querySelector("#delete-1");
+var deleteButton2 = document.querySelector("#delete-2");
+var deleteButton3 = document.querySelector("#delete-3");
+var deleteButton4 = document.querySelector("#delete-4");
+var deleteButton5 = document.querySelector("#delete-5");
+var deleteButton6 = document.querySelector("#delete-6");
 
 //EVENT LISTENERS
+deleteButton1.addEventListener("click", function(event){
+    deletePalette1() 
+}
+)
+
+deleteButton2.addEventListener("click", function(event){
+    deletePalette2() 
+}
+)
+
+deleteButton3.addEventListener("click", function(event){
+    deletePalette3() 
+}
+)
+
+deleteButton4.addEventListener("click", function(event){
+    deletePalette4() 
+}
+)
+
+deleteButton5.addEventListener("click", function(event){
+    deletePalette5() 
+}
+)
+
+deleteButton6.addEventListener("click", function(event){
+    deletePalette6() 
+}
+)
 
 paletteButton.addEventListener("click", function(event){
     randomPalette();
@@ -143,6 +185,60 @@ lockButton4.addEventListener("click", function(event) {
 
 //FUNCTIONS
 
+function deletePalette1() {
+    savedHexBox1.classList.add('hidden');
+    // for (var i = 0; i < savedPalettes.length; i++) {
+    //     if (savedPalettes[i] === savedHex0) {
+    //         savedPalettes.splice(i, 1)
+    //     }
+    // }
+    // savedPalettes.splice(0, 1);
+    
+}
+
+function deletePalette2() {
+    savedHexBox2.classList.add('hidden');
+    // for (var i = 0; i < savedPalettes.length; i++) {
+    //     if (savedPalettes[i] === savedHex1) {
+    //         savedPalettes.splice(i, 1)
+    //     }
+    // }
+    // savedPalettes.splice(1, 1);
+    
+}
+
+function deletePalette3() {
+    savedHexBox3.classList.add('hidden');
+    // for (var i = 0; i < savedPalettes.length; i++) {
+    //     if (savedPalettes[i] === savedHex2) {
+    //         savedPalettes.splice(i, 1)
+    //     }
+    // }
+    // savedPalettes.splice(2, 1);
+    
+}
+
+function deletePalette4() {
+    savedHexBox4.classList.add('hidden');
+    // for (var i = 0; i < savedPalettes.length; i++) {
+    //     if (savedPalettes[i] === savedHex3) {
+    //         savedPalettes.splice(i, 1)
+    //     }
+    // }
+    // savedPalettes.splice(3, 1);
+    
+}
+
+function deletePalette5() {
+    // savedPalettes.splice(4, 1);
+    savedHexBox5.classList.add('hidden');
+}
+
+function deletePalette6() {
+    // savedPalettes.splice(5, 1);
+    savedHexBox6.classList.add('hidden');
+}
+
 function randomHex(){
 var hexCharacters = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var hexArray = [];
@@ -168,7 +264,7 @@ function randomPalette(){
 function savePalette(){
 if(savedHexBox1.classList.contains('hidden')){
 savedHexBox1.classList.remove('hidden');
-var savedHex0 = {
+savedHex0 = {
     box0: hexObjects[0].hex,
     box1: hexObjects[1].hex,
     box2: hexObjects[2].hex,
