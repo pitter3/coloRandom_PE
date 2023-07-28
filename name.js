@@ -10,6 +10,7 @@ var hexObjects = [
   {hex: "#A4C4CA", locked: false}
 ]
 
+var savedPalettes = [];
 
 //DOM ELEMENTS
 
@@ -25,7 +26,44 @@ var savebox11 = document.querySelector("#savebox1-1");
 var savebox12 = document.querySelector("#savebox1-2");
 var savebox13 = document.querySelector("#savebox1-3");
 var savebox14 = document.querySelector("#savebox1-4");
-var savedHexBox1 = document.querySelector("#saved-hex-box-1");
+var savebox20 = document.querySelector("#savebox2-0");
+var savebox21 = document.querySelector("#savebox2-1");
+var savebox22 = document.querySelector("#savebox2-2");
+var savebox23 = document.querySelector("#savebox2-3");
+var savebox24 = document.querySelector("#savebox2-4");
+var savebox30 = document.querySelector("#savebox3-0");
+var savebox31 = document.querySelector("#savebox3-1");
+var savebox32 = document.querySelector("#savebox3-2");
+var savebox33 = document.querySelector("#savebox3-3");
+var savebox34 = document.querySelector("#savebox3-4");
+var savebox40 = document.querySelector("#savebox4-0");
+var savebox41 = document.querySelector("#savebox4-1");
+var savebox42 = document.querySelector("#savebox4-2");
+var savebox43 = document.querySelector("#savebox4-3");
+var savebox44 = document.querySelector("#savebox4-4");
+var savebox50 = document.querySelector("#savebox5-0");
+var savebox51 = document.querySelector("#savebox5-1");
+var savebox52 = document.querySelector("#savebox5-2");
+var savebox53 = document.querySelector("#savebox5-3");
+var savebox54 = document.querySelector("#savebox5-4");
+var savebox60 = document.querySelector("#savebox6-0");
+var savebox61 = document.querySelector("#savebox6-1");
+var savebox62 = document.querySelector("#savebox6-2");
+var savebox63 = document.querySelector("#savebox6-3");
+var savebox64 = document.querySelector("#savebox6-4");
+var savebox70 = document.querySelector("#savebox7-0");
+var savebox71 = document.querySelector("#savebox7-1");
+var savebox72 = document.querySelector("#savebox7-2");
+var savebox73 = document.querySelector("#savebox7-3");
+var savebox74 = document.querySelector("#savebox7-4");
+
+var savedHexBox1 = document.querySelector(".saved-hex-box-1");
+var savedHexBox2 = document.querySelector(".saved-hex-box-2");
+var savedHexBox3 = document.querySelector(".saved-hex-box-3");
+var savedHexBox4 = document.querySelector(".saved-hex-box-4");
+var savedHexBox5 = document.querySelector(".saved-hex-box-5");
+var savedHexBox6 = document.querySelector(".saved-hex-box-6");
+var savedHexBox7 = document.querySelector(".saved-hex-box-7");
 var cap0 = document.querySelector("#cap0");
 var cap1 = document.querySelector("#cap1");
 var cap2 = document.querySelector("#cap2");
@@ -128,13 +166,119 @@ function randomPalette(){
 }
 
 function savePalette(){
-  // if(savedHexBox1.classList.contains('hidden')){
-  // savedHexBox1.classList.remove('hidden');
-  savebox10.style.backgroundColor = hexObjects[0].hex;
-  savebox11.style.backgroundColor = hexObjects[1].hex;
-  savebox12.style.backgroundColor = hexObjects[2].hex;
-  savebox13.style.backgroundColor = hexObjects[3].hex;
-  savebox14.style.backgroundColor = hexObjects[4].hex;
+if(savedHexBox1.classList.contains('hidden')){
+savedHexBox1.classList.remove('hidden');
+var savedHex0 = {
+    box0: hexObjects[0].hex,
+    box1: hexObjects[1].hex,
+    box2: hexObjects[2].hex,
+    box3: hexObjects[3].hex, 
+    box4: hexObjects[4].hex,
+    }
+savebox10.style.backgroundColor = savedHex0.box0;
+savebox11.style.backgroundColor = savedHex0.box1;
+savebox12.style.backgroundColor = savedHex0.box2;
+savebox13.style.backgroundColor = savedHex0.box3;
+savebox14.style.backgroundColor = savedHex0.box4;
+savedPalettes.push(savedHex0);
+} else if(savedHexBox2.classList.contains('hidden')){
+    savedHexBox2.classList.remove('hidden');
+var savedHex1 = {
+    box0: hexObjects[0].hex,
+    box1: hexObjects[1].hex,
+    box2: hexObjects[2].hex,
+    box3: hexObjects[3].hex, 
+    box4: hexObjects[4].hex,
+    }
+savebox20.style.backgroundColor = savedHex1.box0;
+savebox21.style.backgroundColor = savedHex1.box1;
+savebox22.style.backgroundColor = savedHex1.box2;
+savebox23.style.backgroundColor = savedHex1.box3;
+savebox24.style.backgroundColor = savedHex1.box4;
+savedPalettes.push(savedHex1);
+} else if(savedHexBox3.classList.contains('hidden')){
+    savedHexBox3.classList.remove('hidden');
+var savedHex2 = {
+    box0: hexObjects[0].hex,
+    box1: hexObjects[1].hex,
+    box2: hexObjects[2].hex,
+    box3: hexObjects[3].hex, 
+    box4: hexObjects[4].hex,
+    }
+savebox30.style.backgroundColor = savedHex2.box0;
+savebox31.style.backgroundColor = savedHex2.box1;
+savebox32.style.backgroundColor = savedHex2.box2;
+savebox33.style.backgroundColor = savedHex2.box3;
+savebox34.style.backgroundColor = savedHex2.box4;
+savedPalettes.push(savedHex2);
+} else if(savedHexBox4.classList.contains('hidden')){
+    savedHexBox4.classList.remove('hidden');
+var savedHex3 = {
+    box0: hexObjects[0].hex,
+    box1: hexObjects[1].hex,
+    box2: hexObjects[2].hex,
+    box3: hexObjects[3].hex, 
+    box4: hexObjects[4].hex,
+    }
+savebox40.style.backgroundColor = savedHex3.box0;
+savebox41.style.backgroundColor = savedHex3.box1;
+savebox42.style.backgroundColor = savedHex3.box2;
+savebox43.style.backgroundColor = savedHex3.box3;
+savebox44.style.backgroundColor = savedHex3.box4;
+savedPalettes.push(savedHex3);
+} else if(savedHexBox5.classList.contains('hidden')){
+    savedHexBox5.classList.remove('hidden');
+var savedHex4 = {
+    box0: hexObjects[0].hex,
+    box1: hexObjects[1].hex,
+    box2: hexObjects[2].hex,
+    box3: hexObjects[3].hex, 
+    box4: hexObjects[4].hex,
+    }
+savebox50.style.backgroundColor = savedHex4.box0;
+savebox51.style.backgroundColor = savedHex4.box1;
+savebox52.style.backgroundColor = savedHex4.box2;
+savebox53.style.backgroundColor = savedHex4.box3;
+savebox54.style.backgroundColor = savedHex4.box4;
+savedPalettes.push(savedHex4);
+} else if(savedHexBox6.classList.contains('hidden')){
+    savedHexBox6.classList.remove('hidden');
+var savedHex5 = {
+    box0: hexObjects[0].hex,
+    box1: hexObjects[1].hex,
+    box2: hexObjects[2].hex,
+    box3: hexObjects[3].hex, 
+    box4: hexObjects[4].hex,
+    }
+savebox60.style.backgroundColor = savedHex5.box0;
+savebox61.style.backgroundColor = savedHex5.box1;
+savebox62.style.backgroundColor = savedHex5.box2;
+savebox63.style.backgroundColor = savedHex5.box3;
+savebox64.style.backgroundColor = savedHex5.box4;
+savedPalettes.push(savedHex5);
+}
+// } else if(savedHexBox7.classList.contains('hidden')){
+//   savedHexBox7.classList.remove('hidden');
+// var savedHex6 = {
+//   box0: hexObjects[0].hex,
+//   box1: hexObjects[1].hex,
+//   box2: hexObjects[2].hex,
+//   box3: hexObjects[3].hex, 
+//   box4: hexObjects[4].hex,
+//   }
+// savebox70.style.backgroundColor = savedHex6.box0;
+// savebox71.style.backgroundColor = savedHex6.box1;
+// savebox72.style.backgroundColor = savedHex6.box2;
+// savebox73.style.backgroundColor = savedHex6.box3;
+// savebox74.style.backgroundColor = savedHex6.box4;
+// }
+
+//   savebox10.style.backgroundColor = hexObjects[0].hex;
+//   savebox11.style.backgroundColor = hexObjects[1].hex;
+//   savebox12.style.backgroundColor = hexObjects[2].hex;
+//   savebox13.style.backgroundColor = hexObjects[3].hex;
+//   savebox14.style.backgroundColor = hexObjects[4].hex;
+// }
 }
 
 function createNewPalette(){
