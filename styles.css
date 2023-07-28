@@ -174,7 +174,7 @@ main {
     padding-bottom: 30px;
 }
 
-.saved-hex-box-1, .saved-hex-box-2, .saved-hex-box-3, .saved-hex-box-4, .saved-hex-box-5, .saved-hex-box-6, .saved-hex-box-7 {
+.saved-hex-box-1, .saved-hex-box-2, .saved-hex-box-3, .saved-hex-box-4, .saved-hex-box-5, .saved-hex-box-6 {
     display: flex;
     justify-content: center;
     align-items: center;
