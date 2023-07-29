@@ -210,6 +210,17 @@ main {
     margin: 3px
 }
 
+.delete-button {
+    height: 40px;
+    width: 40px;
+    padding-left: 10px;
+}
+
+.delete-button:hover {
+    cursor: pointer;
+}
+
+
 /* #savebox1-3 {
     height: 45px;
     width: 45px;
