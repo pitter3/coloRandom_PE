@@ -94,6 +94,12 @@ var deleteButton5 = document.querySelector("#delete-5");
 var deleteButton6 = document.querySelector("#delete-6");
 
 //EVENT LISTENERS
+window.addEventListener("load", function(event) {
+  
+  randomPalette();
+  createNewPalette();
+});
+
 deleteButton1.addEventListener("click", function(event){
     deletePalette1() 
 }
