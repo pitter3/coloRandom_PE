@@ -1,5 +1,3 @@
-//Update data model so we can access hex codes in squares and captions
-
 //DATA MODEL
 
 var hexObjects = [
@@ -8,7 +6,7 @@ var hexObjects = [
   {hex: "#FFE59A", locked: false},
   {hex: "#B6D7A8", locked: false},
   {hex: "#A4C4CA", locked: false}
-]
+];
 
 var savedPalettes = [{}, {}, {}, {}, {}, {}];
 
@@ -105,155 +103,134 @@ window.addEventListener("load", function(event) {
   createNewPalette();
 });
 
-deleteButton1.addEventListener("click", function(event){
+deleteButton1.addEventListener("click", function(event) {
     deletePalette1();
     removeError();
 }
-)
+);
 
-deleteButton2.addEventListener("click", function(event){
+deleteButton2.addEventListener("click", function(event) {
     deletePalette2();
     removeError();
 }
-)
+);
 
-deleteButton3.addEventListener("click", function(event){
+deleteButton3.addEventListener("click", function(event) {
     deletePalette3();
     removeError();
 }
-)
+);
 
-deleteButton4.addEventListener("click", function(event){
+deleteButton4.addEventListener("click", function(event) {
     deletePalette4(); 
     removeError();
 }
-)
+);
 
-deleteButton5.addEventListener("click", function(event){
+deleteButton5.addEventListener("click", function(event) {
     deletePalette5();
     removeError();
 }
-)
+);
 
-deleteButton6.addEventListener("click", function(event){
+deleteButton6.addEventListener("click", function(event) {
     deletePalette6();
     removeError();
 }
-)
+);
 
-paletteButton.addEventListener("click", function(event){
+paletteButton.addEventListener("click", function(event) {
     randomPalette();
     createNewPalette();
 }
-)
-saveButton.addEventListener("click", function(event){
+);
+
+saveButton.addEventListener("click", function(event) {
   savePalette();
 }
-)
+);
+
 unlockButton0.addEventListener("click", function(event) {
   lock0();
 }
-)
+);
 
 lockButton0.addEventListener("click", function(event) {
   unlock0();
 }
-)
+);
 
 unlockButton1.addEventListener("click", function(event) {
   lock1();
 }
-)
+);
 
 lockButton1.addEventListener("click", function(event) {
   unlock1();
 }
-)
+);
 
 unlockButton2.addEventListener("click", function(event) {
   lock2();
 }
-)
+);
 
 lockButton2.addEventListener("click", function(event) {
   unlock2();
 }
-)
+);
 
 unlockButton3.addEventListener("click", function(event) {
   lock3();
 }
-)
+);
 
 lockButton3.addEventListener("click", function(event) {
   unlock3();
 }
-)
+);
 
 unlockButton4.addEventListener("click", function(event) {
   lock4();
 }
-)
+);
 
 lockButton4.addEventListener("click", function(event) {
   unlock4();
 }
-)
+);
 
 //FUNCTIONS
 
 function deletePalette1() {
     savedHexBox1.classList.add('hidden');
-    // for (var i = 0; i < savedPalettes.length; i++) {
-    //     if (savedPalettes[i] === savedHex0) {
-    //         savedPalettes.splice(i, 1)
-    //     }
-    // }
     savedPalettes.splice(0, 1, {});
-}
+};
 
 function deletePalette2() {
     savedHexBox2.classList.add('hidden');
-    // for (var i = 0; i < savedPalettes.length; i++) {
-    //     if (savedPalettes[i] === savedHex1) {
-    //         savedPalettes.splice(i, 1)
-    //     }
-    // }
     savedPalettes.splice(1, 1, {});
-}
+};
 
 function deletePalette3() {
     savedHexBox3.classList.add('hidden');
-    // for (var i = 0; i < savedPalettes.length; i++) {
-    //     if (savedPalettes[i] === savedHex2) {
-    //         savedPalettes.splice(i, 1)
-    //     }
-    // }
     savedPalettes.splice(2, 1, {});
-}
+};
 
 function deletePalette4() {
     savedHexBox4.classList.add('hidden');
-    // for (var i = 0; i < savedPalettes.length; i++) {
-    //     if (savedPalettes[i] === savedHex3) {
-    //         savedPalettes.splice(i, 1)
-    //     }
-    // }
-    // savedPalettes.splice(3, 1);
     savedPalettes.splice(3, 1, {});
-}
+};
 
 function deletePalette5() {
-    // savedPalettes.splice(4, 1);
     savedHexBox5.classList.add('hidden');
     savedPalettes.splice(4, 1, {});
-}
+};
 
 function deletePalette6() {
-    // savedPalettes.splice(5, 1);
     savedHexBox6.classList.add('hidden');
     savedPalettes.splice(5, 1, {});
-}
+};
 
 function randomHex(){
 var hexCharacters = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -265,131 +242,129 @@ for(var i=0; i<6; i++){
 }
   var hexCode = `#${hexArray.join("")}`;
   return hexCode
-}
+};
 
-
-//Refactor with loop?
-function randomPalette(){
+function randomPalette() {
   for(var i=0; i<hexObjects.length; i++){
     if(hexObjects[i].locked === false){
       hexObjects[i].hex = randomHex()
     }
   }
-}
+};
 
-function savePalette(){
-if(savedHexBox1.classList.contains('hidden')) {
-noSaveMessage.classList.add('hidden');
-savedHexBox1.classList.remove('hidden');
-savedHex0 = {
+function savePalette() {
+  if(savedHexBox1.classList.contains('hidden')) {
+  noSaveMessage.classList.add('hidden');
+  savedHexBox1.classList.remove('hidden');
+  savedHex0 = {
     box0: hexObjects[0].hex,
     box1: hexObjects[1].hex,
     box2: hexObjects[2].hex,
     box3: hexObjects[3].hex, 
     box4: hexObjects[4].hex,
     }
-savebox10.style.backgroundColor = savedHex0.box0;
-savebox11.style.backgroundColor = savedHex0.box1;
-savebox12.style.backgroundColor = savedHex0.box2;
-savebox13.style.backgroundColor = savedHex0.box3;
-savebox14.style.backgroundColor = savedHex0.box4;
-savedPalettes.splice(0, 1, savedHex0);
-randomPalette();
-createNewPalette();
-} else if(savedHexBox2.classList.contains('hidden')) {
+  savebox10.style.backgroundColor = savedHex0.box0;
+  savebox11.style.backgroundColor = savedHex0.box1;
+  savebox12.style.backgroundColor = savedHex0.box2;
+  savebox13.style.backgroundColor = savedHex0.box3;
+  savebox14.style.backgroundColor = savedHex0.box4;
+  savedPalettes.splice(0, 1, savedHex0);
+  randomPalette();
+  createNewPalette();
+  } else if(savedHexBox2.classList.contains('hidden')) {
     savedHexBox2.classList.remove('hidden');
-var savedHex1 = {
+    var savedHex1 = {
     box0: hexObjects[0].hex,
     box1: hexObjects[1].hex,
     box2: hexObjects[2].hex,
     box3: hexObjects[3].hex, 
     box4: hexObjects[4].hex,
     }
-savebox20.style.backgroundColor = savedHex1.box0;
-savebox21.style.backgroundColor = savedHex1.box1;
-savebox22.style.backgroundColor = savedHex1.box2;
-savebox23.style.backgroundColor = savedHex1.box3;
-savebox24.style.backgroundColor = savedHex1.box4;
-savedPalettes.splice(1, 1, savedHex1);
-randomPalette();
-createNewPalette();
-} else if(savedHexBox3.classList.contains('hidden')){
+    savebox20.style.backgroundColor = savedHex1.box0;
+    savebox21.style.backgroundColor = savedHex1.box1;
+    savebox22.style.backgroundColor = savedHex1.box2;
+    savebox23.style.backgroundColor = savedHex1.box3;
+    savebox24.style.backgroundColor = savedHex1.box4;
+    savedPalettes.splice(1, 1, savedHex1);
+    randomPalette();
+    createNewPalette();
+  } else if(savedHexBox3.classList.contains('hidden')) {
     savedHexBox3.classList.remove('hidden');
-var savedHex2 = {
+    var savedHex2 = {
     box0: hexObjects[0].hex,
     box1: hexObjects[1].hex,
     box2: hexObjects[2].hex,
     box3: hexObjects[3].hex, 
     box4: hexObjects[4].hex,
     }
-savebox30.style.backgroundColor = savedHex2.box0;
-savebox31.style.backgroundColor = savedHex2.box1;
-savebox32.style.backgroundColor = savedHex2.box2;
-savebox33.style.backgroundColor = savedHex2.box3;
-savebox34.style.backgroundColor = savedHex2.box4;
-savedPalettes.splice(2, 1, savedHex2);
-randomPalette();
-createNewPalette();
-} else if(savedHexBox4.classList.contains('hidden')){
+    savebox30.style.backgroundColor = savedHex2.box0;
+    savebox31.style.backgroundColor = savedHex2.box1;
+    savebox32.style.backgroundColor = savedHex2.box2;
+    savebox33.style.backgroundColor = savedHex2.box3;
+    savebox34.style.backgroundColor = savedHex2.box4;
+    savedPalettes.splice(2, 1, savedHex2);
+  randomPalette();
+  createNewPalette();
+  } else if(savedHexBox4.classList.contains('hidden')){
     savedHexBox4.classList.remove('hidden');
-var savedHex3 = {
+    var savedHex3 = {
     box0: hexObjects[0].hex,
     box1: hexObjects[1].hex,
     box2: hexObjects[2].hex,
     box3: hexObjects[3].hex, 
     box4: hexObjects[4].hex,
     }
-savebox40.style.backgroundColor = savedHex3.box0;
-savebox41.style.backgroundColor = savedHex3.box1;
-savebox42.style.backgroundColor = savedHex3.box2;
-savebox43.style.backgroundColor = savedHex3.box3;
-savebox44.style.backgroundColor = savedHex3.box4;
-savedPalettes.splice(3, 1, savedHex3);
-randomPalette();
-createNewPalette();
-} else if(savedHexBox5.classList.contains('hidden')){
+  savebox40.style.backgroundColor = savedHex3.box0;
+  savebox41.style.backgroundColor = savedHex3.box1;
+  savebox42.style.backgroundColor = savedHex3.box2;
+  savebox43.style.backgroundColor = savedHex3.box3;
+  savebox44.style.backgroundColor = savedHex3.box4;
+  savedPalettes.splice(3, 1, savedHex3);
+  randomPalette();
+  createNewPalette();
+  } else if(savedHexBox5.classList.contains('hidden')){
     savedHexBox5.classList.remove('hidden');
-var savedHex4 = {
+    var savedHex4 = {
     box0: hexObjects[0].hex,
     box1: hexObjects[1].hex,
     box2: hexObjects[2].hex,
     box3: hexObjects[3].hex, 
     box4: hexObjects[4].hex,
     }
-savebox50.style.backgroundColor = savedHex4.box0;
-savebox51.style.backgroundColor = savedHex4.box1;
-savebox52.style.backgroundColor = savedHex4.box2;
-savebox53.style.backgroundColor = savedHex4.box3;
-savebox54.style.backgroundColor = savedHex4.box4;
-savedPalettes.splice(4, 1, savedHex4);
-randomPalette();
-createNewPalette();
-} else if(savedHexBox6.classList.contains('hidden')){
+  savebox50.style.backgroundColor = savedHex4.box0;
+  savebox51.style.backgroundColor = savedHex4.box1;
+  savebox52.style.backgroundColor = savedHex4.box2;
+  savebox53.style.backgroundColor = savedHex4.box3;
+  savebox54.style.backgroundColor = savedHex4.box4;
+  savedPalettes.splice(4, 1, savedHex4);
+  randomPalette();
+  createNewPalette();
+  } else if(savedHexBox6.classList.contains('hidden')){
     savedHexBox6.classList.remove('hidden');
-var savedHex5 = {
+    var savedHex5 = {
     box0: hexObjects[0].hex,
     box1: hexObjects[1].hex,
     box2: hexObjects[2].hex,
     box3: hexObjects[3].hex, 
     box4: hexObjects[4].hex,
     }
-savebox60.style.backgroundColor = savedHex5.box0;
-savebox61.style.backgroundColor = savedHex5.box1;
-savebox62.style.backgroundColor = savedHex5.box2;
-savebox63.style.backgroundColor = savedHex5.box3;
-savebox64.style.backgroundColor = savedHex5.box4;
-savedPalettes.splice(5, 1, savedHex5);
-randomPalette();
-createNewPalette();
-errorMessage1.classList.remove('hidden');
-errorMessage2.classList.remove('hidden');
-} 
+  savebox60.style.backgroundColor = savedHex5.box0;
+  savebox61.style.backgroundColor = savedHex5.box1;
+  savebox62.style.backgroundColor = savedHex5.box2;
+  savebox63.style.backgroundColor = savedHex5.box3;
+  savebox64.style.backgroundColor = savedHex5.box4;
+  savedPalettes.splice(5, 1, savedHex5);
+  randomPalette();
+  createNewPalette();
+  errorMessage1.classList.remove('hidden');
+  errorMessage2.classList.remove('hidden');
+  } 
 };
 
 function removeError() {
   errorMessage1.classList.add('hidden');
   errorMessage2.classList.add('hidden');
-}
+};
 
 function createNewPalette() {
   cap0.innerText = hexObjects[0].hex;
@@ -402,7 +377,7 @@ function createNewPalette() {
   box2.style.backgroundColor = hexObjects[2].hex;
   box3.style.backgroundColor = hexObjects[3].hex;
   box4.style.backgroundColor = hexObjects[4].hex;
-}
+};
 
 function lock0() {
   unlockButton0.hidden = true;
@@ -456,17 +431,10 @@ function lock4() {
   unlockButton4.hidden = true;
   lockButton4.hidden = false;
   hexObjects[4].locked = true;
-}
+};
 
 function unlock4() {
   lockButton4.hidden = true;
   unlockButton4.hidden = false; 
   hexObjects[4].locked = false;
-}
-
-// function hideImage() {
-//   meditationImage.hidden = true;
-// }
-
-// function showImage() {
-//   meditationImage.hidden = false;
+};
