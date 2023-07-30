@@ -95,6 +95,9 @@ var deleteButton6 = document.querySelector("#delete-6");
 
 var noSaveMessage = document.querySelector(".no-saved-message");
 
+var errorMessage1 = document.querySelector(".error-message1");
+var errorMessage2 = document.querySelector(".error-message2");
+
 //EVENT LISTENERS
 window.addEventListener("load", function(event) {
   
@@ -103,32 +106,38 @@ window.addEventListener("load", function(event) {
 });
 
 deleteButton1.addEventListener("click", function(event){
-    deletePalette1() 
+    deletePalette1();
+    removeError();
 }
 )
 
 deleteButton2.addEventListener("click", function(event){
-    deletePalette2() 
+    deletePalette2();
+    removeError();
 }
 )
 
 deleteButton3.addEventListener("click", function(event){
-    deletePalette3() 
+    deletePalette3();
+    removeError();
 }
 )
 
 deleteButton4.addEventListener("click", function(event){
-    deletePalette4() 
+    deletePalette4(); 
+    removeError();
 }
 )
 
 deleteButton5.addEventListener("click", function(event){
-    deletePalette5() 
+    deletePalette5();
+    removeError();
 }
 )
 
 deleteButton6.addEventListener("click", function(event){
-    deletePalette6() 
+    deletePalette6();
+    removeError();
 }
 )
 
@@ -139,8 +148,6 @@ paletteButton.addEventListener("click", function(event){
 )
 saveButton.addEventListener("click", function(event){
   savePalette();
-  randomPalette();
-  createNewPalette();
 }
 )
 unlockButton0.addEventListener("click", function(event) {
@@ -287,6 +294,8 @@ savebox12.style.backgroundColor = savedHex0.box2;
 savebox13.style.backgroundColor = savedHex0.box3;
 savebox14.style.backgroundColor = savedHex0.box4;
 savedPalettes.splice(0, 1, savedHex0);
+randomPalette();
+createNewPalette();
 } else if(savedHexBox2.classList.contains('hidden')) {
     savedHexBox2.classList.remove('hidden');
 var savedHex1 = {
@@ -302,6 +311,8 @@ savebox22.style.backgroundColor = savedHex1.box2;
 savebox23.style.backgroundColor = savedHex1.box3;
 savebox24.style.backgroundColor = savedHex1.box4;
 savedPalettes.splice(1, 1, savedHex1);
+randomPalette();
+createNewPalette();
 } else if(savedHexBox3.classList.contains('hidden')){
     savedHexBox3.classList.remove('hidden');
 var savedHex2 = {
@@ -317,6 +328,8 @@ savebox32.style.backgroundColor = savedHex2.box2;
 savebox33.style.backgroundColor = savedHex2.box3;
 savebox34.style.backgroundColor = savedHex2.box4;
 savedPalettes.splice(2, 1, savedHex2);
+randomPalette();
+createNewPalette();
 } else if(savedHexBox4.classList.contains('hidden')){
     savedHexBox4.classList.remove('hidden');
 var savedHex3 = {
@@ -332,6 +345,8 @@ savebox42.style.backgroundColor = savedHex3.box2;
 savebox43.style.backgroundColor = savedHex3.box3;
 savebox44.style.backgroundColor = savedHex3.box4;
 savedPalettes.splice(3, 1, savedHex3);
+randomPalette();
+createNewPalette();
 } else if(savedHexBox5.classList.contains('hidden')){
     savedHexBox5.classList.remove('hidden');
 var savedHex4 = {
@@ -347,6 +362,8 @@ savebox52.style.backgroundColor = savedHex4.box2;
 savebox53.style.backgroundColor = savedHex4.box3;
 savebox54.style.backgroundColor = savedHex4.box4;
 savedPalettes.splice(4, 1, savedHex4);
+randomPalette();
+createNewPalette();
 } else if(savedHexBox6.classList.contains('hidden')){
     savedHexBox6.classList.remove('hidden');
 var savedHex5 = {
@@ -362,8 +379,17 @@ savebox62.style.backgroundColor = savedHex5.box2;
 savebox63.style.backgroundColor = savedHex5.box3;
 savebox64.style.backgroundColor = savedHex5.box4;
 savedPalettes.splice(5, 1, savedHex5);
-}
+randomPalette();
+createNewPalette();
+errorMessage1.classList.remove('hidden');
+errorMessage2.classList.remove('hidden');
+} 
 };
+
+function removeError() {
+  errorMessage1.classList.add('hidden');
+  errorMessage2.classList.add('hidden');
+}
 
 function createNewPalette() {
   cap0.innerText = hexObjects[0].hex;
