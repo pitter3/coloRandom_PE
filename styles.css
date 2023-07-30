@@ -127,7 +127,7 @@ main {
 .palette-button, .save-button {
     background-color: black;
     color: white;
-    border-radius: 10px 100px;
+    border-radius: 0px 100px;
     border: none;
     height: 50px;
     width: 270px;
