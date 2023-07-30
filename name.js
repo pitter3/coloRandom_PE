@@ -10,7 +10,7 @@ var hexObjects = [
   {hex: "#A4C4CA", locked: false}
 ]
 
-var savedPalettes = [];
+var savedPalettes = [{}, {}, {}, {}, {}, {}];
 
 var savedHex0;
 var savedHex1;
@@ -139,6 +139,8 @@ paletteButton.addEventListener("click", function(event){
 )
 saveButton.addEventListener("click", function(event){
   savePalette();
+  randomPalette();
+  createNewPalette();
 }
 )
 unlockButton0.addEventListener("click", function(event) {
@@ -200,8 +202,7 @@ function deletePalette1() {
     //         savedPalettes.splice(i, 1)
     //     }
     // }
-    // savedPalettes.splice(0, 1);
-    
+    savedPalettes.splice(0, 1, {});
 }
 
 function deletePalette2() {
@@ -211,8 +212,7 @@ function deletePalette2() {
     //         savedPalettes.splice(i, 1)
     //     }
     // }
-    // savedPalettes.splice(1, 1);
-    
+    savedPalettes.splice(1, 1, {});
 }
 
 function deletePalette3() {
@@ -222,8 +222,7 @@ function deletePalette3() {
     //         savedPalettes.splice(i, 1)
     //     }
     // }
-    // savedPalettes.splice(2, 1);
-    
+    savedPalettes.splice(2, 1, {});
 }
 
 function deletePalette4() {
@@ -234,17 +233,19 @@ function deletePalette4() {
     //     }
     // }
     // savedPalettes.splice(3, 1);
-    
+    savedPalettes.splice(3, 1, {});
 }
 
 function deletePalette5() {
     // savedPalettes.splice(4, 1);
     savedHexBox5.classList.add('hidden');
+    savedPalettes.splice(4, 1, {});
 }
 
 function deletePalette6() {
     // savedPalettes.splice(5, 1);
     savedHexBox6.classList.add('hidden');
+    savedPalettes.splice(5, 1, {});
 }
 
 function randomHex(){
@@ -285,7 +286,7 @@ savebox11.style.backgroundColor = savedHex0.box1;
 savebox12.style.backgroundColor = savedHex0.box2;
 savebox13.style.backgroundColor = savedHex0.box3;
 savebox14.style.backgroundColor = savedHex0.box4;
-savedPalettes.push(savedHex0);
+savedPalettes.splice(0, 1, savedHex0);
 } else if(savedHexBox2.classList.contains('hidden')) {
     savedHexBox2.classList.remove('hidden');
 var savedHex1 = {
@@ -300,7 +301,7 @@ savebox21.style.backgroundColor = savedHex1.box1;
 savebox22.style.backgroundColor = savedHex1.box2;
 savebox23.style.backgroundColor = savedHex1.box3;
 savebox24.style.backgroundColor = savedHex1.box4;
-savedPalettes.push(savedHex1);
+savedPalettes.splice(1, 1, savedHex1);
 } else if(savedHexBox3.classList.contains('hidden')){
     savedHexBox3.classList.remove('hidden');
 var savedHex2 = {
@@ -315,7 +316,7 @@ savebox31.style.backgroundColor = savedHex2.box1;
 savebox32.style.backgroundColor = savedHex2.box2;
 savebox33.style.backgroundColor = savedHex2.box3;
 savebox34.style.backgroundColor = savedHex2.box4;
-savedPalettes.push(savedHex2);
+savedPalettes.splice(2, 1, savedHex2);
 } else if(savedHexBox4.classList.contains('hidden')){
     savedHexBox4.classList.remove('hidden');
 var savedHex3 = {
@@ -330,7 +331,7 @@ savebox41.style.backgroundColor = savedHex3.box1;
 savebox42.style.backgroundColor = savedHex3.box2;
 savebox43.style.backgroundColor = savedHex3.box3;
 savebox44.style.backgroundColor = savedHex3.box4;
-savedPalettes.push(savedHex3);
+savedPalettes.splice(3, 1, savedHex3);
 } else if(savedHexBox5.classList.contains('hidden')){
     savedHexBox5.classList.remove('hidden');
 var savedHex4 = {
@@ -345,7 +346,7 @@ savebox51.style.backgroundColor = savedHex4.box1;
 savebox52.style.backgroundColor = savedHex4.box2;
 savebox53.style.backgroundColor = savedHex4.box3;
 savebox54.style.backgroundColor = savedHex4.box4;
-savedPalettes.push(savedHex4);
+savedPalettes.splice(4, 1, savedHex4);
 } else if(savedHexBox6.classList.contains('hidden')){
     savedHexBox6.classList.remove('hidden');
 var savedHex5 = {
@@ -360,7 +361,7 @@ savebox61.style.backgroundColor = savedHex5.box1;
 savebox62.style.backgroundColor = savedHex5.box2;
 savebox63.style.backgroundColor = savedHex5.box3;
 savebox64.style.backgroundColor = savedHex5.box4;
-savedPalettes.push(savedHex5);
+savedPalettes.splice(5, 1, savedHex5);
 }
 };
 
