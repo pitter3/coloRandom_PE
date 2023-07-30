@@ -93,6 +93,8 @@ var deleteButton4 = document.querySelector("#delete-4");
 var deleteButton5 = document.querySelector("#delete-5");
 var deleteButton6 = document.querySelector("#delete-6");
 
+var noSaveMessage = document.querySelector(".no-saved-message");
+
 //EVENT LISTENERS
 window.addEventListener("load", function(event) {
   
@@ -268,7 +270,8 @@ function randomPalette(){
 }
 
 function savePalette(){
-if(savedHexBox1.classList.contains('hidden')){
+if(savedHexBox1.classList.contains('hidden')) {
+noSaveMessage.classList.add('hidden');
 savedHexBox1.classList.remove('hidden');
 savedHex0 = {
     box0: hexObjects[0].hex,
@@ -283,7 +286,7 @@ savebox12.style.backgroundColor = savedHex0.box2;
 savebox13.style.backgroundColor = savedHex0.box3;
 savebox14.style.backgroundColor = savedHex0.box4;
 savedPalettes.push(savedHex0);
-} else if(savedHexBox2.classList.contains('hidden')){
+} else if(savedHexBox2.classList.contains('hidden')) {
     savedHexBox2.classList.remove('hidden');
 var savedHex1 = {
     box0: hexObjects[0].hex,
@@ -359,31 +362,9 @@ savebox63.style.backgroundColor = savedHex5.box3;
 savebox64.style.backgroundColor = savedHex5.box4;
 savedPalettes.push(savedHex5);
 }
-// } else if(savedHexBox7.classList.contains('hidden')){
-//   savedHexBox7.classList.remove('hidden');
-// var savedHex6 = {
-//   box0: hexObjects[0].hex,
-//   box1: hexObjects[1].hex,
-//   box2: hexObjects[2].hex,
-//   box3: hexObjects[3].hex, 
-//   box4: hexObjects[4].hex,
-//   }
-// savebox70.style.backgroundColor = savedHex6.box0;
-// savebox71.style.backgroundColor = savedHex6.box1;
-// savebox72.style.backgroundColor = savedHex6.box2;
-// savebox73.style.backgroundColor = savedHex6.box3;
-// savebox74.style.backgroundColor = savedHex6.box4;
-// }
+};
 
-//   savebox10.style.backgroundColor = hexObjects[0].hex;
-//   savebox11.style.backgroundColor = hexObjects[1].hex;
-//   savebox12.style.backgroundColor = hexObjects[2].hex;
-//   savebox13.style.backgroundColor = hexObjects[3].hex;
-//   savebox14.style.backgroundColor = hexObjects[4].hex;
-// }
-}
-
-function createNewPalette(){
+function createNewPalette() {
   cap0.innerText = hexObjects[0].hex;
   cap1.innerText = hexObjects[1].hex;
   cap2.innerText = hexObjects[2].hex;
@@ -400,49 +381,49 @@ function lock0() {
   unlockButton0.hidden = true;
   lockButton0.hidden = false;
   hexObjects[0].locked = true;
-}
+};
 
 function unlock0() {
   lockButton0.hidden = true;
   unlockButton0.hidden = false; 
   hexObjects[0].locked = false;
-}
+};
 
 function lock1() {
   unlockButton1.hidden = true;
   lockButton1.hidden = false;
   hexObjects[1].locked = true;
-}
+};
 
 function unlock1() {
   lockButton1.hidden = true;
   unlockButton1.hidden = false; 
   hexObjects[1].locked = false;
-}
+};
 
 function lock2() {
   unlockButton2.hidden = true;
   lockButton2.hidden = false;
   hexObjects[2].locked = true;
-}
+};
 
 function unlock2() {
   lockButton2.hidden = true;
   unlockButton2.hidden = false; 
   hexObjects[2].locked = false;
-}
+};
 
 function lock3() {
   unlockButton3.hidden = true;
   lockButton3.hidden = false;
   hexObjects[3].locked = true;
-}
+};
 
 function unlock3() {
   lockButton3.hidden = true;
   unlockButton3.hidden = false;
   hexObjects[3].locked = false; 
-}
+};
 
 function lock4() {
   unlockButton4.hidden = true;
