@@ -97,6 +97,7 @@ var errorMessage1 = document.querySelector(".error-message1");
 var errorMessage2 = document.querySelector(".error-message2");
 
 //EVENT LISTENERS
+
 window.addEventListener("load", function(event) {
   
   randomPalette();
@@ -232,10 +233,10 @@ function deletePalette6() {
     savedPalettes.splice(5, 1, {});
 };
 
-function randomHex(){
+function randomHex() {
 var hexCharacters = ["A", "B", "C", "D", "E", "F", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var hexArray = [];
-for(var i=0; i<6; i++){
+for(var i = 0; i < 6; i++){
   var randomIndex =  Math.floor(Math.random() * 16);
   var randomCharacter = hexCharacters[randomIndex];
   hexArray.push(randomCharacter);
@@ -245,7 +246,7 @@ for(var i=0; i<6; i++){
 };
 
 function randomPalette() {
-  for(var i=0; i<hexObjects.length; i++){
+  for(var i = 0; i < hexObjects.length; i++){
     if(hexObjects[i].locked === false){
       hexObjects[i].hex = randomHex()
     }
@@ -253,7 +254,7 @@ function randomPalette() {
 };
 
 function savePalette() {
-  if(savedHexBox1.classList.contains('hidden')) {
+  if (savedHexBox1.classList.contains('hidden')) {
   noSaveMessage.classList.add('hidden');
   savedHexBox1.classList.remove('hidden');
   savedHex0 = {
@@ -271,7 +272,7 @@ function savePalette() {
   savedPalettes.splice(0, 1, savedHex0);
   randomPalette();
   createNewPalette();
-  } else if(savedHexBox2.classList.contains('hidden')) {
+  } else if (savedHexBox2.classList.contains('hidden')) {
     savedHexBox2.classList.remove('hidden');
     var savedHex1 = {
     box0: hexObjects[0].hex,
@@ -288,7 +289,7 @@ function savePalette() {
     savedPalettes.splice(1, 1, savedHex1);
     randomPalette();
     createNewPalette();
-  } else if(savedHexBox3.classList.contains('hidden')) {
+  } else if (savedHexBox3.classList.contains('hidden')) {
     savedHexBox3.classList.remove('hidden');
     var savedHex2 = {
     box0: hexObjects[0].hex,
@@ -305,7 +306,7 @@ function savePalette() {
     savedPalettes.splice(2, 1, savedHex2);
   randomPalette();
   createNewPalette();
-  } else if(savedHexBox4.classList.contains('hidden')){
+  } else if (savedHexBox4.classList.contains('hidden')){
     savedHexBox4.classList.remove('hidden');
     var savedHex3 = {
     box0: hexObjects[0].hex,
@@ -322,7 +323,7 @@ function savePalette() {
   savedPalettes.splice(3, 1, savedHex3);
   randomPalette();
   createNewPalette();
-  } else if(savedHexBox5.classList.contains('hidden')){
+  } else if (savedHexBox5.classList.contains('hidden')){
     savedHexBox5.classList.remove('hidden');
     var savedHex4 = {
     box0: hexObjects[0].hex,
@@ -339,7 +340,7 @@ function savePalette() {
   savedPalettes.splice(4, 1, savedHex4);
   randomPalette();
   createNewPalette();
-  } else if(savedHexBox6.classList.contains('hidden')){
+  } else if (savedHexBox6.classList.contains('hidden')){
     savedHexBox6.classList.remove('hidden');
     var savedHex5 = {
     box0: hexObjects[0].hex,
