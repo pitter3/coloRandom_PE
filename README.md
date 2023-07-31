@@ -1,38 +1,41 @@
-// ITERATION 0:
+### Abstract:
+    We built an app that creates and displays random color palettes. Color palettes can be saved and deleted. 
 
-// HTML to layout the structure of the page. We need a HEADER(h1), MAIN<main>.
-// Question: How do we turn a randomly generated number into a hex code?
-// Use flexbox to orgnaize Header and Main.
-// Can we use labels (like we did with radio buttons) for our color box text display.
-// 
+### Installation Instructions:
+1.  Click this link: https://github.com/pitter3/coloRandom_PE
+2.  Click the green < code > button.
+3.  Copy SSH to your clipboard.
+4.  Open up the terminal.
+5.  Change into the directory you wish to clone the app into with the cd command.
+6.  Use the git clone command followed by pasting the copied SSH key.
+7.  Change into the cloned directory with the cd command.
+8.  Run open index.html.
+9.  Enjoy!
 
-// ITERATION 1: 
+### Preview of App:
+<img width="1429" alt="Screenshot 2023-07-30 at 7 59 11 PM" src="https://github.com/pitter3/coloRandom_PE/assets/119368820/caf0116c-4b34-4f19-9856-7c6d01ad816f">
 
-// Button shape is weird-- we will have to use border radius.
-// Data model for our hex codes.
-// We will need the to index our data model and set colors based on its contents.
-// Each box will represent an index position in our data model array. Box 1 is 0, Box 2 is 1.....
-// We will need have each box read its index position and set itself to the color it is reading.
+### Context:
+    Mod 1. 30+ hours 
 
-// ITERATION 2:
+### Contributors:
+    Patrick Eitel: https://github.com/pitter3
+    Dan Lavery: https://github.com/wlavery22?tab=repositories
+    Jonathan Alfonso https://github.com/alfonsojack?tab=repositories
 
-// We will need to add images to our boxes that have event listeners on click.
-// A conditional that only clears our data model if the box is unlocked.
-// If box is locked do not clear out the data model in that index position.
-// Question: Can we use a for loop + a conditional for this?
+### Learning Goals:
+Write semantic HTML and efficient CSS to form a usable UI
+Write clean, DRY JavaScript and leverage functions, creating and using an effective data model
+Manipulate the page after it has loaded adding, removing, and updating elements on the DOM
+Refine your collaboration skills
 
-// ITERATION 3: 
+### Wins + Challenges:
+Effective collaboration
+Figuring out how to delete objects from the data model
+Learning how to efficiently style a page using CSS
+Finishing all MVP iterations without bugs
 
-// Build Saved palettes section with CSS + HTML 
-// Question: is this an HTML aside??
-// New Data Model array for saved palettes section
-// Event Listener on Save Palette button to push original Data Model contents into new one.
-// Style mini boxes
-// !!similar to savedCovers from our paired project!!
-
-// ITERATION 4:
-
-// Splice our data model when we click the X.
-// Add the X next to our saved palettes.
-// Add event listener to the X.
-// Remove palette tied to the proper X.
+Writing non-repetitive, pure and dry JS functions
+Balancing the demands of this project with other responsibilities
+Dealing with different time zones
+Re-styling in CSS when adding new elements like the saved palettes section
